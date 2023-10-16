@@ -1,5 +1,5 @@
 # A practical secret voting scheme for large scale elections
-**Project coordinator: Sorin Iftene**
+**Project coordinator: Iftene Sorin**
 * Bucataru Cristian
 * Ciulin Alexandru
 * Ionescu Paul
