@@ -1,0 +1,13 @@
+com\bctr\ssvs\voting\Administrator.class
+com\bctr\ssvs\voting\DTO\GenericEventDTO.class
+com\bctr\ssvs\voting\Ballot.class
+com\bctr\ssvs\voting\observer\EventListener.class
+com\bctr\ssvs\voting\observer\EventManager.class
+com\bctr\ssvs\voting\DTO\CollectedBallots.class
+com\bctr\ssvs\Main.class
+com\bctr\ssvs\voting\CryptoUtils.class
+com\bctr\ssvs\voting\observer\EventType.class
+com\bctr\ssvs\voting\Voter.class
+com\bctr\ssvs\voting\Vote.class
+com\bctr\ssvs\voting\DTO\SignedBallots.class
+com\bctr\ssvs\voting\Counter.class

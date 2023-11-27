@@ -1,0 +1,47 @@
+@startuml
+class Student {
+    +String ID
+    +Vote vote
+    +Ballot ballot
+    +Signature signature
+    +prepareBallot()
+    +sendBallot()
+    +sendVote()
+}
+
+class Administrator {
+    +SignatureKey signatureKey
+    +verifyBallot()
+    +signBallot()
+    +announceVoters()
+}
+
+class Counter {
+    +List ballots
+    +receiveBallot()
+    +countVotes()
+    +publishResults()
+}
+
+class Ballot {
+    +Vote encryptedVote
+    +Signature signature
+}
+
+class Vote {
+    +String voterID
+    +Integer rating
+}
+
+class Signature {
+    +String signatureData
+}
+
+Student "1" -- "1" Ballot : prepares >
+Student "1" -- "1" Administrator : sends >
+Student "1" -- "1" Counter : sends >
+Administrator "1" -- "1" Ballot : signs >
+Ballot "1" -- "1" Counter : sent to >
+Ballot "1" -- "1" Vote : contains >
+Ballot "1" -- "1" Signature : has >
+@enduml
