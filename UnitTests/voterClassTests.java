@@ -35,6 +35,8 @@ public class VoterTest {
 
         Log.d("The ballot should be created");
         assertNotNull(voter.getBallot());
+        assertNotNull(voter.getBallot().getEncryptedVote());
+        assertNotEquals(vote.getValue(), voter.getBallot().getEncryptedVote());
     }
 
     public void sendBallotShouldSignBallot() {
@@ -46,7 +48,7 @@ public class VoterTest {
         voter.sendBallot();
 
         Log.d("The ballot should be signed");
-        assertNotNull(voter.getBallot().getSignature());
+        assertTrue(voter.getBallot().getSignature() != null && !voter.getBallot().getSignature().isEmpty());
     }
 
     @Test
