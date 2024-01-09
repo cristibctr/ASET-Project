@@ -96,13 +96,34 @@ public class CryptoUtils {
      * @return true if the signature is valid, false otherwise.
      */
     public static boolean verifySignature(PublicKey signaturePublic, String data, String signatureStr) {
+        validateParameters(signaturePublic, data, signatureStr);
         try {
-            Signature signature = Signature.getInstance(SIGNATURE_ALGORITHM);
-            signature.initVerify(signaturePublic);
-            signature.update(data.getBytes());
-            return signature.verify(Base64.getDecoder().decode(signatureStr));
+            Signature signature = createSignature(signaturePublic);
+            updateSignatureWithData(signature, data);
+            return verifySignatureData(signature, signatureStr);
         } catch (Exception e) {
-            throw new RuntimeException("Error verifying signature", e);
+            throw new SignatureVerificationException("Error verifying signature", e);
         }
     }
+
+    private static void validateParameters(PublicKey signaturePublic, String data, String signatureStr) {
+        if (signaturePublic == null || data == null || signatureStr == null) {
+            throw new IllegalArgumentException("Invalid input parameters");
+        }
+    }
+
+    private static Signature createSignature(PublicKey signaturePublic) throws NoSuchAlgorithmException, InvalidKeyException {
+        Signature signature = Signature.getInstance(SIGNATURE_ALGORITHM);
+        signature.initVerify(signaturePublic);
+        return signature;
+    }
+
+    private static void updateSignatureWithData(Signature signature, String data) throws SignatureException {
+        signature.update(data.getBytes());
+    }
+
+    private static boolean verifySignatureData(Signature signature, String signatureStr) throws SignatureException {
+        return signature.verify(Base64.getDecoder().decode(signatureStr));
+    }
+
 }
