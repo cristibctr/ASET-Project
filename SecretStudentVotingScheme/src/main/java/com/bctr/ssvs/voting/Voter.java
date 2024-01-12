@@ -24,8 +24,7 @@ public class Voter {
 
     /**
      * Constructs a Voter with an ID.
-     *
-     * @param counter       The counter.
+     * @param counter The counter.
      */
     public Voter(Counter counter) {
         this.ID = UUID.randomUUID().toString();
@@ -45,7 +44,6 @@ public class Voter {
 
     /**
      * Prepares the ballot for voting.
-     *
      * @param vote The vote to be cast by the voter.
      */
     public void prepareBallot(Vote vote) {
@@ -77,6 +75,17 @@ public class Voter {
                         collectedBallots.ballots().indexOf(ballot), secretKey));
     }
 
+    /**
+     * Receive the ballot.
+     */
+    public Ballot getBallot() {
+        return ballot;
+    }
+
+    /**
+     * Check the signature of the ballot.
+     * @param signature The signature of the ballot
+     */
     private boolean checkSignature(String signature) {
         return CryptoUtils.verifySignature(Administrator.getPublicKey(), String.valueOf(ballot.hashCode()), signature);
     }

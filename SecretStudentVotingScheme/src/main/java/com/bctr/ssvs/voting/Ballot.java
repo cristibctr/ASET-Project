@@ -10,10 +10,9 @@ public class Ballot {
 
     /**
      * Constructs a Ballot with the specified voter ID, encrypted vote, and signature.
-     *
-     * @param voterID       The ID of the voter.
+     * @param voterID The ID of the voter.
      * @param encryptedVote The encrypted vote.
-     * @param signature     The signature of the ballot.
+     * @param signature The signature of the ballot.
      */
     public Ballot(String voterID, String encryptedVote, String signature) {
         this.voterID = voterID;
@@ -23,7 +22,6 @@ public class Ballot {
 
     /**
      * Gets the voter ID.
-     *
      * @return The voter ID.
      */
     public String getVoterID() {
@@ -32,7 +30,6 @@ public class Ballot {
 
     /**
      * Gets the encrypted vote.
-     *
      * @return The encrypted vote.
      */
     public String getEncryptedVote() {
@@ -41,7 +38,6 @@ public class Ballot {
 
     /**
      * Gets the signature of the ballot.
-     *
      * @return The signature.
      */
     public String getSignature() {
@@ -50,7 +46,6 @@ public class Ballot {
 
     /**
      * Sets the signature of the ballot.
-     *
      * @param signature The signature to set.
      */
     public void setSignature(String signature) {

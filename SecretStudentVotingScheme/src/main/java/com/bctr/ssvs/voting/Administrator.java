@@ -42,7 +42,6 @@ public class Administrator {
 
     /**
      * Signs a ballot if the voter is eligible.
-     *
      * @param ballot The ballot to be signed.
      */
     //use aop to verify voter's rights to vote

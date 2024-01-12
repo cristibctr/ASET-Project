@@ -26,7 +26,6 @@ public class Counter {
 
     /**
      * Receives a vote and adds it to the list of ballots.
-     *
      * @param ballot The ballot to be added.
      */
     public void receiveVote(Ballot ballot) {
@@ -45,8 +44,7 @@ public class Counter {
 
     /**
      * Opens the vote for a ballot at index
-     *
-     * @param index     The index of the ballot
+     * @param index The index of the ballot
      * @param secretKey The {@link SecretKey} of the voter
      */
     public void openVote(int index, SecretKey secretKey) {
@@ -56,7 +54,6 @@ public class Counter {
 
     /**
      * Counts the votes and announces the result.
-     *
      * @return The result of the voting.
      */
     public String countVotes() {
@@ -67,4 +64,11 @@ public class Counter {
         }
         return voteCounts.toString();
     }
-}
+
+    /**
+     * Receives a vote and adds it to the list of ballots.
+     */
+    public Object getReceivedEncryptedVotes(int index) {
+        return receivedBallots.getBallot(index).getEncryptedVote();
+        }
+    }
