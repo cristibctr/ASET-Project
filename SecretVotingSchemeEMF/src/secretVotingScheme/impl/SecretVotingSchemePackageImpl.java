@@ -93,6 +93,27 @@ public class SecretVotingSchemePackageImpl extends EPackageImpl implements Secre
 	private EClass messageListenerEClass = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private boolean isCreated = false;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private boolean isInitialized = false;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private static boolean isInited = false;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -110,12 +131,6 @@ public class SecretVotingSchemePackageImpl extends EPackageImpl implements Secre
 	private SecretVotingSchemePackageImpl() {
 		super(eNS_URI, SecretVotingSchemeFactory.eINSTANCE);
 	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private static boolean isInited = false;
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
@@ -653,13 +668,6 @@ public class SecretVotingSchemePackageImpl extends EPackageImpl implements Secre
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private boolean isCreated = false;
-
-	/**
 	 * Creates the meta-model objects for the package.  This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
@@ -729,13 +737,6 @@ public class SecretVotingSchemePackageImpl extends EPackageImpl implements Secre
 		messageListenerEClass = createEClass(MESSAGE_LISTENER);
 		createEOperation(messageListenerEClass, MESSAGE_LISTENER___UPDATE);
 	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private boolean isInitialized = false;
 
 	/**
 	 * Complete the initialization of the package and its meta-model.  This

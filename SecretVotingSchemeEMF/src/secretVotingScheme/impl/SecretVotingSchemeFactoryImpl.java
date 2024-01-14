@@ -39,16 +39,6 @@ public class SecretVotingSchemeFactoryImpl extends EFactoryImpl implements Secre
 	}
 
 	/**
-	 * Creates an instance of the factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public SecretVotingSchemeFactoryImpl() {
-		super();
-	}
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated

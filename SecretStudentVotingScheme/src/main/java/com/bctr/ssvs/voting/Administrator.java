@@ -4,8 +4,6 @@ import com.bctr.ssvs.voting.DTO.SignedBallots;
 import com.bctr.ssvs.voting.observer.EventManager;
 
 import java.security.*;
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 

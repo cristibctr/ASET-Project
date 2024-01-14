@@ -4,17 +4,12 @@ import com.bctr.ssvs.voting.Administrator;
 import com.bctr.ssvs.voting.Counter;
 import com.bctr.ssvs.voting.Vote;
 import com.bctr.ssvs.voting.Voter;
-import org.apache.commons.lang3.StringUtils;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -26,9 +21,9 @@ public class Main {
                 .collect(Collectors.toMap(vote -> new Voter(counter), Vote::new));
         Administrator administrator = Administrator.getAdministrator(List.copyOf(voteMap.keySet()));
         //An attacker trying to manipulate the voting process should not be allowed to vote
-//        Voter fakeVoter = new Voter(counter);
-//        fakeVoter.setAdministrator(administrator);
-//        voteMap.put(fakeVoter, new Vote("3"));
+//          Voter fakeVoter = new Voter(counter);
+//          fakeVoter.setAdministrator(administrator);
+//          voteMap.put(fakeVoter, new Vote("3"));
         voteMap.forEach((key, value) -> {
             key.prepareBallot(value);
             key.sendBallot();
